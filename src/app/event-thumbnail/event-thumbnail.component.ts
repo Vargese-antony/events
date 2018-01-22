@@ -14,4 +14,18 @@ export class EventThumbnailComponent implements OnInit {
 
   @Input() event: any;
 
+  getCSSClassForTime() {
+    if( this.event.time && this.event.time === '8:00 am') {
+      return ['green','bold'];
+    }
+    return [];
+  }
+
+  getCSSStyleForTime() : any {
+    if( this.event.time && this.event.time === '10:00 am') {
+      return {'color':'#ff0000', 'font-weight':'bold'}
+    }
+
+    return {};
+  }
 }
