@@ -20,9 +20,13 @@
       "prefix": "events",
       "styles": [
         "styles.css",
-        "../node_modules/ng2f-bootstrap/dist/bootstrap.min.css"
+        "../node_modules/ng2f-bootstrap/dist/bootstrap.min.css",
+        "../node_modules/toastr/build/toastr.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/toastr/build/toastr.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
