@@ -2,5 +2,9 @@
   <h1>Upcomming Angular 2 Events</h1>
   <hr>
   <events-navbar></events-navbar>
-  <events-thumbnail [event]="eventObject"></events-thumbnail>
+  <div class="row">
+    <div *ngFor="let eventObj of events" class="col-md-5">
+      <events-thumbnail [event]="eventObj"></events-thumbnail>
+    </div>
+  </div>
 </div>
