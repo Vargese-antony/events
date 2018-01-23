@@ -11,3 +11,7 @@
 		display: none
 	}
 }
+
+li > a.activeClass {
+	color: chocolate;
+}
