@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IEvent } from '../index';
 
 @Component({
   selector: 'events-thumbnail',
@@ -12,7 +13,7 @@ export class EventThumbnailComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input() event: any;
+  @Input() event: IEvent;
 
   getCSSClassForTime() {
     if( this.event.time && this.event.time === '8:00 am') {
