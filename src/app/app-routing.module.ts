@@ -12,6 +12,7 @@ const routes: Routes = [
   { path : 'events/new', component : CreateEventComponent, canDeactivate : ['canDeactivateCreateEvent']},
   { path : 'events/:id', component : EventDetailsComponent, canActivate : [EventRouteActivatorService]},
   { path : '404', component : Error404Component},
+  { path : 'user', loadChildren : 'app/user/user.module#UserModule'},
   { path : '', redirectTo : 'events', pathMatch : 'full'}
 ];
 
