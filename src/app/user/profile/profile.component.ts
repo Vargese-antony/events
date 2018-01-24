@@ -6,7 +6,7 @@ import { AuthService } from '../auth.service';
 
 @Component({
   templateUrl: './profile.component.html',
-  styleUrls : ['./profile.component.css']
+  styles : []
 })
 export class ProfileComponent implements OnInit {
   profileForm : FormGroup;

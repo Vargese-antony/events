@@ -7,7 +7,7 @@ import { IEvent } from '../index';
 
 @Component({
   templateUrl: './events-list.component.html',
-  styleUrls: ['./events-list.component.css']
+  styles: []
 })
 export class EventsListComponent implements OnInit {
   events : IEvent[];
