@@ -23,6 +23,7 @@ import { EventRouteActivatorService } from './events/event-details/event-route-a
 import { EventListResolverService } from './events/events-list/event-list-resolver.service';
 import { AuthService } from './user/auth.service';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+import { DurationPipe } from './common/duration.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
