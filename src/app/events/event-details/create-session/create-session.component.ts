@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ISession, validateRestrictedWords } from '../../shared/index';
 
 @Component({
-  selector: 'events-create-session',
+  selector: 'create-session',
   templateUrl: './create-session.component.html',
   styles: []
 })
@@ -16,6 +16,9 @@ export class CreateSessionComponent implements OnInit {
   abstract : FormControl;
 
   formCreateSession : FormGroup;
+
+  @Output() saveSessionEvent = new EventEmitter();
+  @Output() cancelAddSession = new EventEmitter();
 
   constructor() { }
 
@@ -45,6 +48,10 @@ export class CreateSessionComponent implements OnInit {
       level : formValues.level,
       abstract : formValues.abstract
     }
-    console.log(session);
+    this.saveSessionEvent.emit(session);
+  }
+
+  cancel() {
+    this.cancelAddSession.emit();
   }
 }
