@@ -61,7 +61,10 @@ import { DurationPipe } from './common/duration.pipe';
       },
     },
     EventListResolverService,
-    AuthService
+    //AuthService, (or below)
+    {
+      provide : AuthService, useClass : AuthService
+    }
   ],
   bootstrap: [AppComponent]
 })
