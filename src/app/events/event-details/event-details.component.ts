@@ -11,6 +11,9 @@ import { IEvent, ISession } from '../index';
 export class EventDetailsComponent implements OnInit {
   event : IEvent;
   addMode : boolean = false;
+  filteredBy : string = 'all';
+  sortBy : string = 'name';
+  
   constructor(private eventService: EventService, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
