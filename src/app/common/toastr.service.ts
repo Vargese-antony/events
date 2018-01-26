@@ -1,26 +1,14 @@
-import { Injectable } from '@angular/core';
-//import { toastr } from 'toastr/build/toastr.min.js';
+import { InjectionToken  } from '@angular/core';
+/**
+ * Interface for typescript intelligence, which has all the methods of toastr library.
+ * not needed if the library has more API's 
+ */
 
-declare let toastr;
+ export let TOASTR_TOKEN = new InjectionToken('toastr');
 
-@Injectable()
-export class ToastrService {
-
-  constructor() { }
-
-  success(message : string, title?:string) {
-    toastr.success(message,title);
-  }
-
-  info(message : string, title?:string) {
-    toastr.info(message,title);
-  }
-
-  warning(message : string, title?:string) {
-    toastr.warning(message,title);
-  }
-
-  error(message : string, title?:string) {
-    toastr.error(message,title);
-  }
+export interface Toastr {
+  success(message : string, title?:string);
+  info(message : string, title?:string);
+  warning(message : string, title?:string);
+  error(message : string, title?:string);
 }

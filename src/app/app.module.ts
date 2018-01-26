@@ -16,8 +16,10 @@ import {
   EventService
 } from './events/index';
 
+import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
+declare let toastr : Toastr;
+
 import { NavbarComponent } from './navbar/navbar.component';
-import { ToastrService } from './common/toastr.service';
 import { Error404Component } from './errors/error-404/error-404.component';
 import { EventRouteActivatorService } from './events/event-details/event-route-activator.service';
 import { EventListResolverService } from './events/events-list/event-list-resolver.service';
@@ -47,7 +49,10 @@ import { DurationPipe } from './common/duration.pipe';
   ],
   providers: [
     EventService, 
-    ToastrService, 
+    {
+      provide : TOASTR_TOKEN,
+      useValue : toastr
+    }, 
     EventRouteActivatorService,
     {
       provide : 'canDeactivateCreateEvent',
