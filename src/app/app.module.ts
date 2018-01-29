@@ -14,7 +14,11 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   EventService,
-  UpvoteComponent
+  EventRouteActivatorService,
+  EventListResolverService,
+  UpvoteComponent,
+  VoterService,
+  ValidateLocation
 } from './events/index';
 
 declare let toastr : Toastr;
@@ -32,9 +36,6 @@ import {
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { Error404Component } from './errors/error-404/error-404.component';
-import { EventRouteActivatorService } from './events/event-details/event-route-activator.service';
-import { EventListResolverService } from './events/events-list/event-list-resolver.service';
-import { VoterService } from './events/event-details/voter.service';
 
 import { AuthService } from './user/auth.service';
 
@@ -53,7 +54,8 @@ import { AuthService } from './user/auth.service';
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    ValidateLocation
   ],
   imports: [
     BrowserModule,
