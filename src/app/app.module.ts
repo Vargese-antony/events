@@ -13,7 +13,8 @@ import {
   CreateEventComponent,
   CreateSessionComponent,
   SessionListComponent,
-  EventService
+  EventService,
+  UpvoteComponent
 } from './events/index';
 
 declare let toastr : Toastr;
@@ -33,6 +34,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Error404Component } from './errors/error-404/error-404.component';
 import { EventRouteActivatorService } from './events/event-details/event-route-activator.service';
 import { EventListResolverService } from './events/events-list/event-list-resolver.service';
+import { VoterService } from './events/event-details/voter.service';
+
 import { AuthService } from './user/auth.service';
 
 @NgModule({
@@ -49,7 +52,8 @@ import { AuthService } from './user/auth.service';
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +82,8 @@ import { AuthService } from './user/auth.service';
     //AuthService, (or below)
     {
       provide : AuthService, useClass : AuthService
-    }
+    },
+    VoterService
   ],
   bootstrap: [AppComponent]
 })
