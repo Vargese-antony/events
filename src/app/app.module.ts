@@ -22,7 +22,7 @@ import {
   ValidateLocation
 } from './events/index';
 
-declare let toastr : Toastr;
+declare let toastr : ToastrService;
 declare let jQuery : any;
 import { 
   CollapsibleWellComponent,
@@ -30,7 +30,7 @@ import {
   ModalTriggerDirective,
   DurationPipe,
   TOASTR_TOKEN, 
-  Toastr,
+  ToastrService,
   JQUERY_TOKEN
 } from './common/index';
 

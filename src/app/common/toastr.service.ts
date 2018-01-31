@@ -6,7 +6,7 @@ import { InjectionToken  } from '@angular/core';
 
  export let TOASTR_TOKEN = new InjectionToken('toastr');
 
-export interface Toastr {
+export interface ToastrService {
   success(message : string, title?:string);
   info(message : string, title?:string);
   warning(message : string, title?:string);
