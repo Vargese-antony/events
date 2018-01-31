@@ -11,7 +11,7 @@ import { ISession } from '../events/index';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  searchTerm : string;
+  searchTerm : string = '';
   foundSessions : ISession[] = [];
 
   constructor(private authService : AuthService, private eventService : EventService) { }

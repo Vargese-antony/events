@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from '../shared/index';
+import { IEvent } from '../index';
 
 @Component({
   selector: 'events-create-event',
@@ -20,9 +21,12 @@ export class CreateEventComponent implements OnInit {
   }
 
   saveEvent(formValues) {
-    this.eventService.saveEvent(formValues);
-    this.isDirty = false;
-    this.router.navigate(['/events'])
+    this.eventService.saveEvent(formValues).subscribe( (event:IEvent) => {
+      console.log('New event saved: ', event);
+      this.isDirty = false;
+      this.router.navigate(['/events']);
+    });
+    
   }
 
   canDeactivateCreateEvent() : boolean{

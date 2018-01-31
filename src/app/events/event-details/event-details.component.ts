@@ -17,8 +17,8 @@ export class EventDetailsComponent implements OnInit {
   constructor(private eventService: EventService, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.forEach( p => {
-      this.event = this.eventService.getEvent(+p['id']);
+    this.activatedRoute.data.forEach( data => {
+      this.event = data['event'];
       this.addMode = false;
     })
    //this.event = this.eventService.getEvent(+this.activatedRoute.snapshot.paramMap.get('id'));
@@ -34,9 +34,9 @@ export class EventDetailsComponent implements OnInit {
     //set the event id
     session.id = maxId+1;
     this.event.sessions.push(session); 
-    this.eventService.updateEvent(this.event);
-
-    //set the add mode to false
-    this.addMode = false;
+    this.eventService.saveEvent(this.event).subscribe( data => {
+      //set the add mode to false
+      this.addMode = false;
+    });
   }
 }

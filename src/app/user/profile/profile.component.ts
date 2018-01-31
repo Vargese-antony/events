@@ -26,12 +26,21 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfile(formValues) {
-    this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
-    this.toasterService.success('Profile Saved Successfully');
-    this.router.navigate(['/events']);
+    this.authService.updateCurrentUser(formValues.firstName, formValues.lastName)
+      .subscribe( res => {
+        this.toasterService.success('Profile Saved Successfully');
+        this.router.navigate(['/events']);
+      });
   }
   cancel() {
     this.router.navigate(['/events']);
+  }
+
+  logOut() {
+    this.authService.logOut()
+      .subscribe( res => {
+        this.router.navigate(['/user/login']);
+      });
   }
 
   validateFirstName() {
