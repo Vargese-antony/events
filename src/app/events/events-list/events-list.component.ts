@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../shared/event.service';
 import { IEvent } from '../index';
 
-import { TOASTR_TOKEN, Toastr } from '../../common/toastr.service';
+import { TOASTR_TOKEN, ToastrService } from '../../common/toastr.service';
 
 @Component({
   templateUrl: './events-list.component.html',
