@@ -4,7 +4,7 @@ import { SessionListComponent } from './session-list.component';
 import { AuthService } from '../../../user/auth.service';
 import { VoterService, ISession } from '../../index';
 
-fdescribe('SessionListComponent', () => {
+fdescribe('SessionListComponent Isolated Tests', () => {
   let component: SessionListComponent;
   let mockAuthService : AuthService;
   let mockVoterService : VoterService;
