@@ -10,9 +10,9 @@ import { AuthService } from '../../../user/auth.service';
   styles: []
 })
 export class SessionListComponent implements OnInit, OnChanges {
-  @Input() sessions : ISession[];
-  @Input() filteredBy : string;
-  @Input() sortBy : string;
+  @Input() sessions: ISession[];
+  @Input() filteredBy: string;
+  @Input() sortBy: string;
   @Input() eventId : number;
 
   filterdSessions : ISession[];
@@ -24,11 +24,10 @@ export class SessionListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log('Inside ngOnChanges');
-    if( this.sessions ) {
+    if ( this.sessions ) {
       this.filterSessions(this.filteredBy);
-      //Once filtered sort the sessions
-      this.sortBy === 'name' ? this.filterdSessions.sort(this.sortSessionsByName) 
+      // Once filtered sort the sessions
+      this.sortBy === 'name' ? this.filterdSessions.sort(this.sortSessionsByName)
         : this.filterdSessions.sort(this.sortSessionsByVotes);
     }
   }

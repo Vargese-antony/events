@@ -6,7 +6,7 @@ import { SessionListComponent } from './session-list.component';
 import { VoterService } from '../voter.service';
 import { AuthService } from '../../../user/auth.service';
 import { ISession } from '../../shared/event.model';
-import { UpvoteComponent } from '../../../event-details/upvote/upvote.component';
+import { UpvoteComponent } from '../upvote/upvote.component';
 import { CollapsibleWellComponent, DurationPipe } from '../../../common/index';
 
 fdescribe('SessionListComponent', () => {
@@ -26,7 +26,9 @@ fdescribe('SessionListComponent', () => {
             }
 
         };
-        const mockVoterService = {};
+        const mockVoterService = {
+            userHasVoted: () => true
+        };
         TestBed.configureTestingModule( {
             imports : [],
             declarations : [
@@ -61,7 +63,6 @@ fdescribe('SessionListComponent', () => {
             component.filteredBy = 'all';
             component.sortBy = 'name';
             component.eventId = 2;
-
             component.ngOnChanges();
             fixture.detectChanges();
 
